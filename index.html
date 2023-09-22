@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+        <title>Rekisteröitymislomake</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+
+    </head>
+    <body>
+        <h1>Rekisteröitymislomake</h1>
+        <div id="main">          
+            <p><b>Siirry kentästä toiseen tab-näppäimellä:</b></p>
+        </div>
+        <div>
+            <form id="lomake" onsubmit="return validateForm()">
+                <div class="label-input">
+                    <label for="ID">Käyttäjä ID:  </label>
+                    <input type="text" id="ID" name="ID" size="20" oninput="checkUserIDLength()">
+                    <div id="IDError" style="color: red;">
+                    </div>
+                </div>
+                </div><br>
+                <div class="label-input">
+                    <label for="salasana">Salasana:  </label>
+                    <input type="password" id="salasana" name="salasana" size="20" oninput="oninput="checkPasswordRequirements()">
+                    <div id="salasana-error" class="error" style="color: red;"> </div>
+                    <div id="salasana-error" class="error" style="color: red;"></div>
+                </div><br>
+                <div class="label-input">
+                    <label for="nimi">Nimi:  </label>
+                    <input type="text" id="nimi" name="nimi" size="40" oninput="validateNimi()">
+                    <div id="nimi-error" style="color: red;"></div>
+                </div><br>
+                <div class="label-input">
+                    <label for="osoite">Osoite:  </label>
+                    <input type="text" id="osoite" name="osoite" size="40" oninput="validateOsoite()">
+                </div><br>
+                <div class="label-input">
+                    <label for="maa">Maa:  </label> <!-- Alasvetovalikko-->
+                    <select id="maa">
+                        <option value="valitse">(Valitse maa)</option>
+                        <option value="suomi">Suomi</option>
+                        <option value="ruotsi">Ruotsi</option>
+                        <option value="norja">Norja</option>
+                        <option value="tanska">Tanska</option>
+                        <option value="islanti">Islanti</option>
+                        <option value="muu">Muu</option>
+                    </select>
+                    <div id="maa-error" style="color: red;"></div>
+                </div><br>
+                <div class="label-input">
+                    <label for="postinumero">Postinumero:  </label>
+                    <input type="text" id="postinumero" name="postinumero" size="20" maxlength="5" oninput="validatePostinumero()">
+                    <div id="postinumero-error" style="color: red;"></div>
+                    </div>
+                    
+                </div><br>
+                <div class="label-input">
+                    <label for="email">Sähköposti:  </label>
+                    <input type="text" id="email" name="email" size="40">
+                    <div id="email-error" style="color: red;"></div>
+                </div>
+                <br>
+                <div class="label-input">
+                    <label for="sukupuoli">Sukupuoli:</label> <!-- Tähän ympyrät: Mies Nainen-->
+                    <input type="radio" id="sukupuoli1" name="sukupuoli" value="mies"> Mies
+                    <input type="radio" id="sukupuoli2" name="sukupuoli" value="nainen">  Nainen
+                    <div id="sukupuoli-error" style="color: red;"></div>
+                </div>
+                <div class="label-input">
+                    <label for="kieli">Kieli:</label>    <!-- tähän ruudut: Suomi Muu kuin Suomi-->
+                    <input type="checkbox" id="kieli1" name="kieli" value="suomi"> Suomi
+                    <input type="checkbox" id="kieli2" name="kieli" value="muu"> Muu kuin Suomi
+                    <div id="kieli-error" style="color: red;"></div>
+                </div><br>
+                <div class="label-input">
+                    <label for="tietoja">Lisätietoja:  </label>
+                    <textarea id="tietoja" name="tietoja" rows="5" cols="41"></textarea>
+                </div>
+                <div><br>
+                    <button type="submit" class="btn btn-info"><b>Lähetä</b>
+                    </button>
+                </div>
+            </form>
+
+            </div>
+            <script src="lomake.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+    </body>
+    
+</html>
