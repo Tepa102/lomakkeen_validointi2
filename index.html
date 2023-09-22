@@ -15,8 +15,8 @@
         <div id="main">          
             <p><b>Siirry kentästä toiseen tab-näppäimellä:</b></p>
         </div>
-        <div>
-            <form id="lomake" onsubmit="return validateForm()">
+
+            <form id="lomake" onsubmit="return validateForm(event)">
                 <div class="label-input">
                     <label for="ID">Käyttäjä ID:  </label>
                     <input type="text" id="ID" name="ID" size="20" oninput="tarkistaID()">
@@ -26,22 +26,23 @@
                 </div><br>
                 <div class="label-input">
                     <label for="salasana">Salasana:  </label>
-                    <input type="password" id="salasana" name="salasana" size="20" oninput="oninput="checkPasswordRequirements()">
+                    <input type="password" id="salasana" name="salasana" size="20" oninput="tarkistaSalasana()">
                     <div id="salasana-error" class="error" style="color: red;"> </div>
-                    <div id="salasana-error" class="error" style="color: red;"></div>
+                    
                 </div><br>
                 <div class="label-input">
                     <label for="nimi">Nimi:  </label>
-                    <input type="text" id="nimi" name="nimi" size="40" oninput="validateNimi()">
+                    <input type="text" id="nimi" name="nimi" size="40" oninput="tarkistaNimi()">
                     <div id="nimi-error" style="color: red;"></div>
                 </div><br>
                 <div class="label-input">
                     <label for="osoite">Osoite:  </label>
-                    <input type="text" id="osoite" name="osoite" size="40" oninput="validateOsoite()">
+                    <input type="text" id="osoite" name="osoite" size="40" oninput="tarkistaOsoite()">
+                    <div id="osoite-error" style="color: red;"></div>
                 </div><br>
                 <div class="label-input">
                     <label for="maa">Maa:  </label> <!-- Alasvetovalikko-->
-                    <select id="maa">
+                    <select id="maa" onchange="tarkistaMaa()">
                         <option value="valitse">(Valitse maa)</option>
                         <option value="suomi">Suomi</option>
                         <option value="ruotsi">Ruotsi</option>
@@ -54,7 +55,7 @@
                 </div><br>
                 <div class="label-input">
                     <label for="postinumero">Postinumero:  </label>
-                    <input type="text" id="postinumero" name="postinumero" size="20" maxlength="5" oninput="validatePostinumero()">
+                    <input type="text" id="postinumero" name="postinumero" size="20" maxlength="5" oninput="tarkistaPostinumero()">
                     <div id="postinumero-error" style="color: red;"></div>
                     </div>
                     
@@ -85,9 +86,12 @@
                     <button type="submit" class="btn btn-info"><b>Lähetä</b>
                     </button>
                 </div>
+                <div id="ilmoitus" style="display: none;">
+                    Lomake lähetetty onnistuneesti!
+                </div>
+                
             </form>
 
-            </div>
             <script src="lomake.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 
