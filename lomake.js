@@ -142,18 +142,18 @@ function validateForm(event) {
 
     tarkistaSukupuoli();
     tarkistaKieli();
-    const userIDError = document.getElementById("IDError";)
+    const userIDError = document.getElementById("IDError");
     // Tarkista, onko jossain kentässä vielä virheitä
     if (
-        userIDError.textContent !== "" || 
-        salasanaError.textContent !== "" || 
-        nimiError.textContent !== "" ||
-        sukupuoliError.textContent !== "" || 
-        kieliError.textContent !== "" || 
-        osoiteError.textContent !== "" || 
-        maaError.textContent !== "" || 
-        postinumeroError.textContent !== "" || 
-        emailError.textContent !== ""
+        document.getElementById("IDError").textContent !== "" || 
+        document.getElementById("salasana-error").textContent !== "" || 
+        document.getElementById("nimi-error").textContent !== "" ||
+        document.getElementById("sukupuoli-error").textContent !== "" || 
+        document.getElementById("kieli-error").textContent !== "" || 
+        document.getElementById("osoite-error").textContent !== "" || 
+        document.getElementById("maa-error").textContent !== "" || 
+        document.getElementById("postinumero-error").textContent !== "" || 
+        document.getElementById("email-error").textContent !== ""
     ) {
         // Jos kentissä on virheitä, älä lähetä lomaketta
         return false;
