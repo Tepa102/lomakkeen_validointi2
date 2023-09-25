@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../clicker_peli"
+		},
+		{
+			"path": "../js_lomake_validointi"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "lomakkeen_validointi2"
+	}
+}
